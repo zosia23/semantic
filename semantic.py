@@ -20,6 +20,9 @@ for token1 in tokens:
     for token2 in tokens:
         print(token1.text, token2.text, token1.similarity(token2))
 
+#Interesting that cat and monkey(animals) have less similarity than apple banana (fruit).
+
+#My example:
 tokens = nlp('dog bowl kitchen spoon')
 
 for token1 in tokens:
@@ -40,3 +43,8 @@ model_sentence = nlp(sentence_to_compare)
 for sentence in sentences:
     similarity = nlp(sentence).similarity(model_sentence)
     print(sentence + " - ", similarity)
+
+
+
+#Running example file with 'en_core_web_sm' rather than 'en_core_web_md' results in less useful information of 
+#similarity as it does not give context, only similarity based of characteristics such as tagger or parser.
